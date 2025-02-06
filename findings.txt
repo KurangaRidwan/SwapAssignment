@@ -1,0 +1,29 @@
+1️ Free Arbitrage Exploit
+Attacker swaps back and forth to drain one token while making a profit.
+
+ Scenario:
+Token A (ETH) = from token
+Token B (USDC) = to token
+
+Initial Pool Reserves:
+100 ETH
+200,000 USDC
+Attacker starts with 10 ETH.
+Attacker calculates the swap price for swapping 10 ETH into USDC:
+10*200,000/100 = 20,000 USDC
+Attacker receives 20,000 USDC.
+
+New reserves:
+110 ETH
+180,000 USDC
+Swap back USDC for ETH using the same formula:
+20,000*110/180,000 = 12.22 ETH
+Attacker receives 12.22 ETH (profit of 2.22 ETH).
+
+New reserves:
+97.78 ETH
+200,000 USDC
+Repeat to drain Token A (ETH)
+
+Since the price is calculated without updating reserves dynamically, 
+the attacker keeps swapping back and forth, slowly extracting free ETH.
